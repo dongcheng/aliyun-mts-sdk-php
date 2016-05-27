@@ -6,9 +6,6 @@
  * Time: 下午3:17
  */
 
-namespace MTS;
-
-
 use MTS\Core\MtsException;
 use MTS\Http\RequestCore;
 use MTS\Http\RequestCore_Exception;

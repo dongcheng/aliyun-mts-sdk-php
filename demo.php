@@ -9,7 +9,7 @@ function classLoader($class)
     }
 }
 spl_autoload_register('classLoader');
-use MTS\MtsClient;
+
 $mtsClient = new MtsClient('***', '***');
 //$result = $mtsClient->submitMediaInfoJob(json_encode(['Bucket'=>'bucket','Location'=>'oss-cn-hangzhou','Object'=>'demo/3874309.mp4']),'pipelineId');
 //$result = $mtsClient->queryMediaInfoJobList('3b6d1404f1fd4c31a9260e579ab04b2f,c7176722ea1f462eb7bb5e510ff0b11b');
