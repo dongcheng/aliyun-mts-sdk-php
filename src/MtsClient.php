@@ -168,6 +168,7 @@ class MtsClient
      */
     public function __construct($accessKeyId, $accessKeySecret)
     {
+        spl_autoload_register(array($this, 'loader'));
         $accessKeyId = trim($accessKeyId);
         $accessKeySecret = trim($accessKeySecret);
 
@@ -180,6 +181,14 @@ class MtsClient
         $this->accessKeyId = $accessKeyId;
         $this->accessKeySecret = $accessKeySecret;
         self::checkEnv();
+    }
+
+    private function loader($class) {
+        $path = str_replace('\\', DIRECTORY_SEPARATOR, $class);
+        $file = __DIR__ . DIRECTORY_SEPARATOR . $path . '.php';
+        if (file_exists($file)) {
+            require_once $file;
+        }
     }
 
     /**
