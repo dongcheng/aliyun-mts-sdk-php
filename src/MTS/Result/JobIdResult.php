@@ -19,7 +19,7 @@ class JobIdResult extends Result
         $jobId = null;
         if (isset($xml->JobId)) {
             $jobId = new \StdClass;
-            $jobId->JobId= strval($xml->JobId);
+            $jobId->jobId= strval($xml->JobId);
         }
         return $jobId;
     }
